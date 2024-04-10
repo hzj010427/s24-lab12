@@ -1,6 +1,7 @@
 package AndrewWebServices;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
@@ -33,6 +34,7 @@ public class AndrewWebServicesTest {
         // This is taking way too long to test
         database.addUser("Scotty", 17214);
         assertTrue(andrewWebService.logIn("Scotty", 17214));
+        assertFalse(andrewWebService.logIn("Scotty", 17514));
     }
 
     @Test
